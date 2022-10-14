@@ -1,5 +1,4 @@
-﻿using System.Runtime.Serialization;
-using Polly;
+﻿using Polly;
 
 var retryPolicy = Policy.Handle<MyException>().Retry(3);
 
@@ -18,7 +17,5 @@ retryPolicy.Execute(() =>
 
 public class MyException : Exception
 {
-    public MyException(string message) : base(message)
-    {
-    }
+    public MyException(string message) : base(message) { }
 }
